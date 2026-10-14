@@ -1,59 +1,74 @@
-# EnterpriseEngineeringPortfolio
+# Enterprise Engineering Portfolio — Noxolo Mandisa Mkhungo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+[![Angular](https://img.shields.io/badge/Angular-19.0-DD0031?logo=angular&logoColor=white)](https://angular.dev/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![Java](https://img.shields.io/badge/Backend-Java_21_%7C_Spring_Boot_3-007396?logo=openjdk&logoColor=white)](https://spring.io/)
+[![Domain](https://img.shields.io/badge/Domain-noxolomandisamkhungo.co.za-10b981)](https://noxolomandisamkhungo.co.za)
 
-## Development server
+This repository contains the frontend application for the professional engineering portfolio of **Noxolo Mandisa Mkhungo** (Enterprise Java Engineer | Backend Systems & Architecture). 
 
-To start a local development server, run:
+The platform is designed around enterprise developer standards—restrained, technically credible, and structured to highlight backend domain modeling, C4 system architecture diagrams, and interactive REST API integrations.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🏛️ Architecture & Tech Stack
 
-## Code scaffolding
+### Frontend Application Layer
+* **Framework:** Angular 19 (Standalone Components, Signals, Lazy-Loaded Routing)
+* **UI Design System:** Bootstrap 5.3 + Custom SCSS Design Tokens
+* **Typography:** `Inter` (UI Sans-Serif) & `JetBrains Mono` (Technical Metadata & Code)
+* **Iconography:** Bootstrap Icons (`bootstrap-icons`)
+* **Hosting Platform:** Vercel / Netlify (Automated CI/CD deployment on push to `main`)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Target Backend Integration Layer
+* **Runtime & Framework:** Java 21 / Spring Boot 3.x / Jakarta EE
+* **Database & Persistence:** PostgreSQL with Flyway migration scripts
+* **Containerization:** Multi-stage Docker container builds
+* **Cloud API Deployment:** Render / Railway
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🗺️ Application Views & Routing
 
-```bash
-ng generate --help
-```
+| Route | View Name | Purpose |
+| :--- | :--- | :--- |
+| `/` | **Overview** | Elevator pitch, core competencies (Production vs POC Dev), and featured architecture previews. |
+| `/architecture` | **Architecture** | Enterprise POC case studies, C4 blueprints, problem statements, and key architectural decisions. |
+| `/api-playground` | **API Playground** | Interactive REST HTTP client executing live requests against backend Spring Boot services. |
+| `/about` | **About & Resume** | Professional experience, core enterprise capabilities, engineering philosophy, and downloadable CV. |
 
-## Building
+---
 
-To build the project run:
+## 🚀 Enterprise Proof-of-Concepts Roadmap
 
-```bash
-ng build
-```
+1. **PCM / PIM Core Engine** *(In Progress)*
+   * **Domain:** Catalog & Master Data Management
+   * **Focus:** Hierarchical category trees, attribute inheritance, Flyway DB versioning, and Redis caching.
+2. **Fulfilment & Order Processing Engine** *(Planned)*
+   * **Domain:** Transactional Processing
+   * **Focus:** State machine orchestration, idempotent API design, and optimistic database locking.
+3. **Digital Asset Management (DAM) Core** *(Planned)*
+   * **Domain:** Media Pipeline & Binary Data
+   * **Focus:** Asynchronous binary processing and presigned URL authorization for object stores.
+4. **Multi-Tenant Storefront Context Engine** *(Planned)*
+   * **Domain:** Multi-Tenant Channel Architecture
+   * **Focus:** Thread-local context resolution, API security interceptors, and tenant configuration caching.
+5. **Context-Driven API Representation Engine** *(Planned)*
+   * **Domain:** Integration & API Gateway
+   * **Focus:** Jackson serialization filters, DTO layer encapsulation, and dynamic payload projection.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🛠️ Local Development Setup
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Prerequisites
+* **Node.js:** `v18.x` or `v20.x` LTS
+* **npm:** `v9.x` or higher
+* **Angular CLI:** `v19.x` (`npm install -g @angular/cli`)
 
-```bash
-ng test
-```
+### Quickstart
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/NMandisa/EnterpriseEngineeringPortfolio.git](https://github.com/YOUR_GITHUB_USERNAME/EnterpriseEngineeringPortfolio.git)
+   cd EnterpriseEngineeringPortfolio

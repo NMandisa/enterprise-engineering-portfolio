@@ -1,0 +1,141 @@
+<!-- Hero Section -->
+<section class="mb-5 pb-lg-4">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 surface-card border rounded-pill">
+          <span class="d-inline-block bg-primary rounded-circle" style="width: 8px; height: 8px;"></span>
+          <span class="font-monospace small text-muted-custom">Building Portfolio Proof-of-Concepts</span>
+        </div>
+        
+        <h1 class="display-4 fw-bold mb-3 text-dark">{{ name }}</h1>
+        <p class="fs-4 fw-medium text-muted-custom mb-3">{{ headline }}</p>
+        <p class="lead text-secondary mb-4" style="max-width: 680px;">{{ summary }}</p>
+  
+        <div class="d-flex flex-wrap gap-3">
+            <a routerLink="/architecture" class="btn btn-primary btn-lg px-4 fs-6 fw-semibold">
+              Explore Architecture Case Studies <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+            <a routerLink="/about" class="btn btn-outline-dark btn-lg px-4 fs-6 fw-semibold">
+              About & Experience
+            </a>
+          </div>
+      </div>
+  
+      <div class="col-lg-4">
+        <div class="surface-card p-4 shadow-sm border">
+          <h2 class="h6 text-uppercase tracking-wider text-muted-custom font-monospace mb-3">Core Engineering Focus</h2>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-cpu text-indigo fs-5 mt-1"></i>
+              <div>
+                <strong class="d-block text-dark">Enterprise Java & Spring</strong>
+                <span class="small text-muted-custom">Layered architectures, dependency injection, DTO mapping, and clean domain boundaries.</span>
+              </div>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-database text-indigo fs-5 mt-1"></i>
+              <div>
+                <strong class="d-block text-dark">Relational Persistence</strong>
+                <span class="small text-muted-custom">Database schema design, transactional integrity, and version-controlled migration scripts.</span>
+              </div>
+            </li>
+            <li class="d-flex align-items-start gap-3">
+              <i class="bi bi-box-seam text-indigo fs-5 mt-1"></i>
+              <div>
+                <strong class="d-block text-dark">Clean Integration APIs</strong>
+                <span class="small text-muted-custom">RESTful service contracts, OpenAPI documentation, and structured error responses.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <hr class="my-5 border-secondary opacity-25">
+  
+  <!-- Technical Stack & Capabilities -->
+  <section class="mb-5">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-4">
+      <div>
+        <h2 class="h3 fw-bold mb-1">Technical Stack & Capabilities</h2>
+        <p class="text-muted-custom mb-0">Distinguishing core production experience from active architecture POC development.</p>
+      </div>
+    </div>
+  
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+      @for (item of competencies; track item.name) {
+        <div class="col">
+          <div class="surface-card p-3 h-100 d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between gap-2 border hover-shadow">
+            <div class="d-flex align-items-center gap-3">
+              <div class="p-2 rounded bg-light border text-dark">
+                <i class="bi {{ item.icon }} fs-4"></i>
+              </div>
+              <div>
+                <h3 class="h6 fw-semibold mb-0 text-dark">{{ item.name }}</h3>
+                <span class="small text-muted-custom font-monospace">{{ item.category }}</span>
+              </div>
+            </div>
+            <span 
+              class="badge font-monospace text-uppercase"
+              [class.bg-success-subtle]="item.status === 'Professional Experience'"
+              [class.text-success-emphasis]="item.status === 'Professional Experience'"
+              [class.bg-info-subtle]="item.status === 'Portfolio Development'"
+              [class.text-info-emphasis]="item.status === 'Portfolio Development'">
+              {{ item.status === 'Professional Experience' ? 'Production' : 'POC Dev' }}
+            </span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+  
+  <!-- Featured Architecture Proofs of Concept -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-end mb-4">
+      <div>
+        <h2 class="h3 fw-bold mb-1">Architecture Proofs of Concept</h2>
+        <p class="text-muted-custom mb-0">Domain-driven backend models with explicit lifecycle states.</p>
+      </div>
+      <a routerLink="/architecture" class="link-indigo fw-semibold text-decoration-none">
+        View All Blueprints <i class="bi bi-chevron-right"></i>
+      </a>
+    </div>
+  
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      @for (poc of featuredPocs; track poc.id) {
+        <div class="col">
+          <div class="surface-card p-4 h-100 d-flex flex-column justify-content-between border">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-light text-dark font-monospace border">{{ poc.domain }}</span>
+                <span 
+                  class="badge font-monospace text-uppercase"
+                  [class.bg-secondary-subtle]="poc.status === 'Planned'"
+                  [class.text-secondary]="poc.status === 'Planned'"
+                  [class.bg-warning-subtle]="poc.status === 'In Progress'"
+                  [class.text-warning-emphasis]="poc.status === 'In Progress'"
+                  [class.bg-success-subtle]="poc.status === 'Implemented'"
+                  [class.text-success-emphasis]="poc.status === 'Implemented'">
+                  {{ poc.status }}
+                </span>
+              </div>
+              <h3 class="h5 fw-bold text-dark mb-2">{{ poc.title }}</h3>
+              <p class="text-muted-custom mb-4">{{ poc.summary }}</p>
+            </div>
+  
+            <div>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                @for (tag of poc.tags; track tag) {
+                  <span class="badge bg-secondary-subtle text-secondary font-monospace">{{ tag }}</span>
+                }
+              </div>
+              <a routerLink="/architecture" class="btn btn-outline-dark btn-sm font-monospace">
+                View Architecture & Domain Model
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>

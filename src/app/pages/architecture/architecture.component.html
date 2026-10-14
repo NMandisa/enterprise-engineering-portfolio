@@ -1,0 +1,83 @@
+<!-- Header -->
+<section class="mb-5">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 surface-card border rounded-pill">
+        <i class="bi bi-diagram-3 text-indigo"></i>
+        <span class="font-monospace small text-muted-custom">Domain Boundaries & System Designs</span>
+      </div>
+      <h1 class="display-5 fw-bold text-dark mb-3">{{ pageTitle }}</h1>
+      <p class="lead text-secondary mb-0" style="max-width: 750px;">{{ pageSubtitle }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- POC Case Studies List -->
+<div class="d-flex flex-column gap-5">
+  @for (poc of pocList; track poc.id) {
+    <article [id]="poc.id" class="surface-card p-4 p-lg-5 border shadow-sm">
+      
+      <!-- Card Header -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-2 mb-3 pb-3 border-bottom">
+        <div>
+          <span class="badge bg-light text-dark font-monospace border mb-2">{{ poc.domain }}</span>
+          <h2 class="h3 fw-bold text-dark mb-0">{{ poc.title }}</h2>
+        </div>
+        <span 
+          class="badge font-monospace text-uppercase align-self-start"
+          [class.bg-secondary-subtle]="poc.status === 'Planned'"
+          [class.text-secondary]="poc.status === 'Planned'"
+          [class.bg-warning-subtle]="poc.status === 'In Progress'"
+          [class.text-warning-emphasis]="poc.status === 'In Progress'"
+          [class.bg-success-subtle]="poc.status === 'Implemented'"
+          [class.text-success-emphasis]="poc.status === 'Implemented'">
+          {{ poc.status }}
+        </span>
+      </div>
+
+      <!-- Content Grid -->
+      <div class="row g-4 mb-4">
+        
+        <!-- Left Column: Problem & Architectural Decisions -->
+        <div class="col-lg-7">
+          <div class="mb-4">
+            <h3 class="h6 text-uppercase font-monospace text-muted-custom tracking-wider mb-2">Problem Statement</h3>
+            <p class="text-secondary mb-0">{{ poc.problemStatement }}</p>
+          </div>
+
+          <div>
+            <h3 class="h6 text-uppercase font-monospace text-muted-custom tracking-wider mb-2">Key Architectural Decisions</h3>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+              @for (highlight of poc.architecturalHighlights; track highlight) {
+                <li class="d-flex align-items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-indigo mt-1 small"></i>
+                  <span class="small text-main">{{ highlight }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Blueprint Placeholder -->
+        <div class="col-lg-5">
+          <div class="bg-light border rounded p-4 text-center h-100 d-flex flex-column justify-content-center align-items-center">
+            <i class="bi bi-bounding-box-circles display-5 text-muted mb-2"></i>
+            <span class="font-monospace small text-dark fw-semibold mb-1">{{ poc.c4DiagramType }}</span>
+            <span class="small text-muted-custom">Visual C4 Diagram / Sequence Model</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Card Footer: Tech Tags -->
+      <div class="pt-3 border-top">
+        <div class="d-flex flex-wrap gap-2">
+          @for (tech of poc.techStack; track tech) {
+            <span class="badge bg-secondary-subtle text-secondary font-monospace">{{ tech }}</span>
+          }
+        </div>
+      </div>
+
+    </article>
+  }
+</div>
