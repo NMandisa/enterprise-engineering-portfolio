@@ -34,7 +34,6 @@ The platform is designed around enterprise developer standards—restrained, tec
 | :--- | :--- | :--- |
 | `/` | **Overview** | Elevator pitch, core competencies (Production vs POC Dev), and featured architecture previews. |
 | `/architecture` | **Architecture** | Enterprise POC case studies, C4 blueprints, problem statements, and key architectural decisions. |
-| `/api-playground` | **API Playground** | Interactive REST HTTP client executing live requests against backend Spring Boot services. |
 | `/about` | **About & Resume** | Professional experience, core enterprise capabilities, engineering philosophy, and downloadable CV. |
 
 ---
@@ -70,5 +69,5 @@ The platform is designed around enterprise developer standards—restrained, tec
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/NMandisa/EnterpriseEngineeringPortfolio.git](https://github.com/YOUR_GITHUB_USERNAME/EnterpriseEngineeringPortfolio.git)
+   git clone [https://github.com/NMandisa/EnterpriseEngineeringPortfolio.git](https://github.com/NMandisa/EnterpriseEngineeringPortfolio.git)
    cd EnterpriseEngineeringPortfolio
