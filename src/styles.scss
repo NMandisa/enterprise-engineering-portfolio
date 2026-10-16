@@ -1,77 +1,15 @@
-@use "bootstrap/scss/bootstrap";
-@import "bootstrap-icons/font/bootstrap-icons.css";
+/* 1. Abstracts & Vendors */
+@use "styles/abstracts/vendors";
+@use "styles/abstracts/variables";
 
-:root {
-  --primary-dark: #0f172a;
-  --primary-navy: #1e293b;
+/* 2. Base & Typography */
+@use "styles/base/boilerplate";
 
-  --accent-emerald: #10b981;
-  --accent-indigo: #6366f1;
+/* 3. Components */
+@use "styles/components/buttons";
+@use "styles/components/cards";
+@use "styles/components/header";
+@use "styles/components/footer";
 
-  --bg-light: #f8fafc;
-  --bg-card: #ffffff;
-
-  --text-main: #334155;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
-
-  --font-body: "Inter", sans-serif;
-  --font-code: "JetBrains Mono", monospace;
-
-  --content-width: 1200px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  color: var(--text-main);
-  background: var(--bg-light);
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-code,
-pre,
-.font-monospace {
-  font-family: var(--font-code);
-}
-
-a {
-  text-decoration: none;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--accent-indigo);
-  outline-offset: 3px;
-}
-
-.surface-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-}
-
-.text-muted-custom {
-  color: var(--text-muted);
-}
-
-.btn-primary {
-  --bs-btn-bg: var(--accent-indigo);
-  --bs-btn-border-color: var(--accent-indigo);
-  --bs-btn-hover-bg: #4f46e5;
-  --bs-btn-hover-border-color: #4f46e5;
-}
-
-.site-navbar {
-  background: var(--primary-dark);
-}
-
-.site-footer {
-  background: var(--primary-dark);
-  color: #cbd5e1;
-}
+/* 4. Utilities & Helpers */
+@use "styles/utilities/helpers";

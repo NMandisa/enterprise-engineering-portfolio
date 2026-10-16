@@ -1,0 +1,9 @@
+.text-indigo {
+  color: var(--accent-indigo, #6366f1);
+}
+
+.border-start-lg {
+  @media (min-width: 992px) {
+    border-left: 1px solid var(--border-color, #e2e8f0) !important;
+  }
+}

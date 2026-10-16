@@ -19,7 +19,7 @@ export interface ArchitecturePoc {
 @Component({
   selector: 'app-architecture',
   standalone: true,
-  imports: [RouterLink],
+  //imports: [RouterLink],
   templateUrl: './architecture.component.html',
   styleUrl: './architecture.component.scss'
 })

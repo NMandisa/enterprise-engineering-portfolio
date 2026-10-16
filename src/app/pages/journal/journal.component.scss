@@ -1,0 +1,23 @@
+.text-indigo {
+  color: var(--accent-indigo, #6366f1);
+}
+
+.border-indigo {
+  border-color: var(--accent-indigo, #6366f1) !important;
+}
+
+.bg-indigo-subtle {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+.text-emerald {
+  color: #34d399;
+}
+
+.leading-relaxed {
+  line-height: 1.75;
+}
+
+.article-reader-container {
+  max-width: 740px;
+}
