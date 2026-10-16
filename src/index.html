@@ -2,19 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Noxolo Mandisa Mkhungo | Enterprise Software Engineer</title>
+  <title>Noxolo Mandisa Mkhungo | Enterprise Java Engineer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   
-  <!-- Modern SVG Favicon with PNG Fallback -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
   
-  <!-- Typography: Inter & JetBrains Mono -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Person & WebSite JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://noxolomandisamkhungo.co.za/#person",
+        "name": "Noxolo Mandisa Mkhungo",
+        "jobTitle": "Enterprise Java Engineer",
+        "url": "https://noxolomandisamkhungo.co.za",
+        "sameAs": [
+          "https://linkedin.com/in/NoxoloMkhungo",
+          "https://github.com/NMandisa"
+        ],
+        "knowsAbout": [
+          "Java 21",
+          "Spring Boot 3",
+          "PostgreSQL",
+          "Flyway",
+          "Software Architecture",
+          "SAP Commerce Cloud",
+          "Angular"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://noxolomandisamkhungo.co.za/#website",
+        "url": "https://noxolomandisamkhungo.co.za",
+        "name": "Noxolo Mandisa Mkhungo — Portfolio",
+        "publisher": {
+          "@id": "https://noxolomandisamkhungo.co.za/#person"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <app-root></app-root>
