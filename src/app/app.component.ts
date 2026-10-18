@@ -10,13 +10,7 @@ import { AnalyticsService } from './core/services/analytics.service';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent],
-  template: `
-    <app-header />
-    <main class="container-xl px-3 px-lg-4 py-4">
-      <router-outlet />
-    </main>
-    <app-footer />
-  `
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   private readonly router = inject(Router);
@@ -55,14 +49,7 @@ export class AppComponent implements OnInit {
     // 1. Initialize GA4 script and dataLayer synchronously
     this.analyticsService.init();
 
-    // 2. Explicitly track initial route and set metadata for initial load / SSR
-    const initialPath = this.router.url.split(/[?#]/)[0];
-    const initialConfig = this.routeMetadata[initialPath] || this.routeMetadata['/'];
-
-    this.seoService.updateMetaTags(initialConfig);
-    this.analyticsService.trackPageView(initialPath, initialConfig.title);
-
-    // 3. Listen to subsequent client-side SPA navigations
+    // 2. Listen to router navigations (handles initial load, SSR pre-rendering, and client SPA routing)
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {

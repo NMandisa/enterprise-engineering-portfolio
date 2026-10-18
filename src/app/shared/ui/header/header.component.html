@@ -1,6 +1,6 @@
 <header class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top border-bottom border-secondary">
   <div class="container-xl px-3 px-lg-4">
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" routerLink="/">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" routerLink="/" (click)="closeMenu()">
       <span class="text-success font-monospace">&lt;NM/&gt;</span>
       <span>Noxolo Mkhungo</span>
     </a>
@@ -8,30 +8,29 @@
     <button
       class="navbar-toggler"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mainNavigation"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="!isMenuCollapsed"
       aria-controls="mainNavigation"
-      aria-expanded="false"
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <nav class="collapse navbar-collapse" id="mainNavigation">
+    <nav class="collapse navbar-collapse" [class.show]="!isMenuCollapsed" id="mainNavigation">
       <ul class="navbar-nav ms-auto gap-lg-3 py-2 py-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Overview</a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Overview</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/architecture" routerLinkActive="active">Architecture</a>
+          <a class="nav-link" routerLink="/architecture" routerLinkActive="active" (click)="closeMenu()">Architecture</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/journal" routerLinkActive="active">Journal</a>
+          <a class="nav-link" routerLink="/journal" routerLinkActive="active" (click)="closeMenu()">Journal</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">About & Resume</a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About & Resume</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
         </li>
       </ul>
     </nav>
