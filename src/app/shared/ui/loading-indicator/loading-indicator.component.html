@@ -1,0 +1,15 @@
+<div [class.loading-overlay]="overlay" [class.d-flex]="overlay" [class.align-items-center]="overlay" [class.justify-content-center]="overlay">
+  <div class="d-flex align-items-center gap-2" role="status">
+    <div 
+      class="spinner-border text-primary" 
+      [class.spinner-border-sm]="size === 'sm'"
+      [style.width]="size === 'lg' ? '3rem' : null"
+      [style.height]="size === 'lg' ? '3rem' : null"
+      aria-hidden="true">
+    </div>
+    @if (message) {
+      <span class="font-monospace text-secondary small">{{ message }}</span>
+    }
+    <span class="visually-hidden">Loading content...</span>
+  </div>
+</div>

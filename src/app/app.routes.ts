@@ -4,32 +4,29 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home/home.component').then(m => m.HomeComponent),
-    title: 'Overview | Noxolo Mandisa Mkhungo'
-  },
-  {
-    path: 'architecture',
-    loadComponent: () =>
-      import('./pages/architecture/architecture.component').then(m => m.ArchitectureComponent),
-    title: 'Architecture & Case Studies'
-  },
-  {
-    path: 'journal',
-    loadComponent: () =>
-      import('./pages/journal/journal.component').then(m => m.JournalComponent),
-    title: 'Engineering Journal | Technical Articles'
-  },
-  {
-    path: 'about',
-    loadComponent: () =>
-      import('./pages/about/about.component').then(m => m.AboutComponent),
-    title: 'About & Experience'
-  },
-  {
-    path: 'contact',
-    loadComponent: () =>
-      import('./pages/contact/contact.component').then(m => m.ContactComponent),
-    title: 'Contact | Noxolo Mandisa Mkhungo'
+      import('./layouts/main-layout/main-layout.component').then(m => m.MainLayoutComponent),
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./features/home/home.routes').then(m => m.HOME_ROUTES)
+      },
+      {
+        path: 'journal',
+        loadChildren: () => import('./features/journal/journal.routes').then(m => m.JOURNAL_ROUTES)
+      },
+      {
+        path: 'architecture',
+        loadChildren: () => import('./features/architecture/architecture.routes').then(m => m.ARCHITECTURE_ROUTES)
+      },
+      {
+        path: 'about',
+        loadChildren: () => import('./features/about/about.routes').then(m => m.ABOUT_ROUTES)
+      },
+      {
+        path: 'contact',
+        loadChildren: () => import('./features/contact/contact.routes').then(m => m.CONTACT_ROUTES)
+      }
+    ]
   },
   {
     path: '**',

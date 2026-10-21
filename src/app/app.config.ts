@@ -8,7 +8,7 @@ import { provideRouter, TitleStrategy } from '@angular/router';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 import { routes } from './app.routes';
-import { CustomPageTitleStrategy } from './shared/page-title-strategy/page-title-strategy';
+import { CustomPageTitleStrategy } from './core/seo/page-title-strategy';
 
 export const appConfig: ApplicationConfig = {
   providers: [
